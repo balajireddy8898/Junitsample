@@ -22,5 +22,10 @@ pipeline {
         bat 'mvn clean install'
       }
     }
+    stage('deploy') {
+      steps {
+        bat 'xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\Junitsample_master\\target\\junitsample-0.0.1-SNAPSHOT.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps"'
+      }
+    }
   }
 }
